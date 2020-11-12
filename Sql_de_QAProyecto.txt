@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS QAProyect;
+
+USE QAProyect;
+
+CREATE TABLE IF NOT EXISTS cliente (
+  nit_cliente varchar(50) NOT NULL,
+  nombre      varchar(100) DEFAULT NULL,
+  apellido    varchar(100) DEFAULT NULL,
+  direccion   varchar(100) DEFAULT NULL,
+  telefono    int(11) DEFAULT NULL,
+  correo      varchar(100) DEFAULT NULL,
+  id_estado   int(11) DEFAULT NULL,
+  id_departamento  int(11) DEFAULT NULL,
+  id_municipio int(11) DEFAULT NULL,
+  PRIMARY KEY (nit_cliente)   
+);
+
+CREATE TABLE IF NOT EXISTS login (
+  id_login int(11) NOT NULL AUTO_INCREMENT,
+  login_name varchar(50) DEFAULT NULL,
+  pasword    varchar(50) DEFAULT NULL,  
+  id_estado int(11) DEFAULT NULL,
+  PRIMARY KEY (id_login)
+); 
+
+
+CREATE TABLE IF NOT EXISTS departamento (
+  id_departamento int(11) NOT NULL,
+  descripcion     varchar(100) NOT NULL,
+  PRIMARY KEY (id_departamento) USING BTREE
+);
